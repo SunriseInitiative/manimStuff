@@ -1,5 +1,19 @@
 from flask import Flask, jsonify, request
 
+sample_dict = {
+    "artie-wong": {
+        "name": "Artie Wong",
+        "age": 13,
+        "city": "Cambridge",
+        "favoriteSubject": "Computer Science"
+    },
+    "jayden-jimenez": {
+        "name": "Jayden Jimenez",
+        "age": 13,
+        "city": "Cambridge",
+        "favoriteSubject": "Computer Science"
+},}
+
 app = Flask(__name__)
 
 @app.route('/api', methods=['POST'])
@@ -11,15 +25,6 @@ def handle_request():
 
 @app.route('/get-dict', methods=['GET'])
 def get_dict():
-    sample_dict = {"artie-wong": {
-        "name": "Artie Wong",
-        "age": 13,
-        "city": "Cambridge"
-    }, "jayden-jimenez": {
-        "name": "Jayden Jimenez",
-        "age": 13,
-        "city": "Cambridge"
-    },}
     return jsonify(sample_dict), 200
 
 if __name__ == '__main__':
