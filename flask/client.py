@@ -1,7 +1,7 @@
 import requests
 
 def get_dictionary():
-    url = "http://10.88.0.3:5000" \
+    url = "http://10.88.0.3:5000"
     "/get-dict"  # URL of the server endpoint
     try:
         response = requests.get(url)  # Send GET request
@@ -22,7 +22,7 @@ if __name__ == "__main__":
     while True:
         dict = get_dictionary()
         if dict == "error":
-            print("error recieved")
+            break
         else:
             search = input("Enter a name to search for: ")
             if search in dict.keys():
